@@ -50,7 +50,7 @@ Siga os passos abaixo para executar o dashboard em sua máquina local.
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/SEU-USUARIO/PsSauro.git](https://github.com/SEU-USUARIO/PsSauro.git)
+    git clone .....
     ```
 
 2.  **Navegue até o diretório do projeto:**
@@ -71,15 +71,6 @@ Siga os passos abaixo para executar o dashboard em sua máquina local.
     ```bash
     pip install -r requirements.txt
     ```
-
-5.  **Inicie o dashboard:**
-    ```bash
-    dashing start
-    ```
-
-6.  **Acesse o dashboard no seu navegador:**
-    Abra o navegador e acesse [http://localhost:8050](http://localhost:8050).
-
 ---
 
 ## 📂 Estrutura do Projeto (Sugestão para `py-dashing`)
@@ -101,7 +92,7 @@ PsSauro/
 
 ## 👨‍💻 Autor
 
--   **[SEU NOME AQUI]** - [seu-linkedin](https://linkedin.com/in/...) | [seu-github](https://github.com/...)
+-   **Daniel Nunes Duarte**
 
 ---
 
