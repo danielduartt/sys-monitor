@@ -1,4 +1,3 @@
-# jobs/network.py
 import psutil
 import time
 

@@ -1,4 +1,3 @@
-# jobs/disk.py
 import psutil
 
 class Disk:

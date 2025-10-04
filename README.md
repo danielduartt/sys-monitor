@@ -1,102 +1,136 @@
-# PsSauro - Dashboard de Monitoramento de Sistema
+# 📊 Sys Monitor - Monitor de Sistema em Tempo Real
 
-**Um dashboard web para monitorar os sinais vitais do seu computador em tempo real, com o poder do Python e a agilidade do py-dashing.**
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Status](https://img.shields.io/badge/status-100%25%20completo-success.svg)
 
-![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
-![license](https://img.shields.io/badge/license-MIT-green.svg)
+> Monitor de sistema completo em Python com interface visual no terminal. Desenvolvido como parte do **Desafio I** de Sistemas Operacionais.
 
----
+## 📸 Interface
 
-## 📝 Descrição
+![Sys Monitor Interface](./screenshots/image.png)
 
-**PsSauro** transforma os dados complexos do seu sistema operacional em um dashboard web elegante e fácil de entender. Usando `psutil` para extrair informações precisas e `py-dashing` para criar widgets interativos, este projeto oferece uma visão clara e contínua do desempenho do seu hardware.
+## ✨ Características
 
-Este projeto foi desenvolvido como requisito avaliativo para a disciplina **Sistemas Operacionais**, ministrada pela Profa. Alana Oliveira no curso de Engenharia da Computação da Universidade Federal do Maranhão (UFMA).
+### 📋 Requisitos do Desafio I (100% Completo)
 
-*(Imagem de exemplo do seu dashboard pode ser inserida aqui quando estiver pronto)*
-`![Exemplo do Dashboard](link_para_sua_imagem.png)`
+| Item | Recurso | Status |
+|------|---------|--------|
+| 1️⃣ | Quantidade de núcleos / CPU | ✅ |
+| 2️⃣ | Quantidade de memória usada / livre | ✅ |
+| 3️⃣ | Lista de processos | ✅ |
+| 4️⃣ | Detalhamento de processo por ID | ✅ |
+| 5️⃣ | Nível de bateria | ✅ |
 
----
+### � Recursos Extras
 
-## ✨ Funcionalidades
+- 📊 **Gráficos visuais em tempo real** (CPU, memória, bateria)
+- 🌐 **Velocidade de rede** (download/upload)
+- 💾 **Monitoramento de disco** (múltiplas partições)
+- 🌡️ **Sensores de hardware** (ventiladores - Linux)
+- ⏱️ **Uptime e Boot Time**
+- 🎨 **Interface colorida e responsiva**
 
-O dashboard exibe os seguintes widgets em tempo real:
+## 🚀 Início Rápido
 
--   💻 **CPU**: Gráfico com o uso percentual de cada núcleo.
--   🧠 **Memória**: Medidor (gauge) mostrando o percentual de memória RAM utilizada.
--   📈 **Processos**: Lista com os principais processos por consumo de CPU ou memória.
--   🔋 **Bateria**: Widget que exibe o nível da bateria e se está carregando.
--   📊 **Informações Gerais**: Um quadro com dados estáticos, como nome do sistema, total de núcleos e memória total.
+```bash
+# 1. Clone o repositório
+git clone https://github.com/danielduartt/sys-monitor.git
+cd sys-monitor
 
----
+# 2. Instale as dependências
+pip install -r requirements.txt
 
-## 🛠️ Tecnologias Utilizadas
+# 3. Execute o monitor
+python main.py
 
--   **[Python 3](https.www.python.org/)**: Linguagem base para o backend de coleta de dados.
--   **[psutil](https.pypi.org/project/psutil/)**: Biblioteca para obter informações do sistema.
--   **[py-dashing](https://pypi.org/project/py-dashing/)**: Framework para a criação do dashboard.
--   **[Flask](https://flask.palletsprojects.com/)**: Servidor web que o `py-dashing` utiliza por baixo dos panos.
+# 4. Para sair, pressione Ctrl+C
+```
 
----
-
-## 🚀 Instalação e Execução
-
-Siga os passos abaixo para executar o dashboard em sua máquina local.
-
-**Pré-requisitos:**
-* [Python 3.8](https.www.python.org/downloads/) ou superior.
-
-**Passos:**
-
-1.  **Clone o repositório:**
-    ```bash
-    git clone .....
-    ```
-
-2.  **Navegue até o diretório do projeto:**
-    ```bash
-    cd PsSauro
-    ```
-
-3.  **Crie e ative um ambiente virtual (Recomendado):**
-    ```bash
-    python -m venv venv
-    # Windows
-    venv\Scripts\activate
-    # Linux / macOS
-    source venv/bin/activate
-    ```
-
-4.  **Instale as dependências:**
-    ```bash
-    pip install -r requirements.txt
-    ```
----
-
-## 📂 Estrutura do Projeto (Sugestão para `py-dashing`)
-
-`py-dashing` utiliza uma estrutura de pastas específica para organizar os jobs (coleta de dados) e os widgets.
+## 🗂️ Estrutura
 
 ```
-PsSauro/
-├── ui/
-│   └── display.py       
-├── jobs/
-│   ├── cpu.py          \# Job para coletar dados da CPU
-│   ├── memory.py       \# Job para coletar dados da memória
-│   └── ...             \# Outros jobs
-├── requirements.txt    \# Lista de dependências
-└── README.md           \# Este arquivo
+sys-monitor/
+├── main.py                      # 🚀 Executável principal
+├── requirements.txt             # 📦 Dependências
+├── jobs/                        # 📊 Módulos de coleta
+│   ├── cpu.py                   # CPU e núcleos
+│   ├── memory.py & swap.py      # Memória
+│   ├── processes.py             # Processos
+│   ├── system.py                # Sistema
+│   ├── network.py & disk.py     # Rede e disco
+│   └── sensores.py              # Bateria e sensores
+├── ui/                          # 🎨 Interface
+│   └── display.py               # Dashboard
+└── docs/                        # 📚 Documentação
 ```
+
+## 🎯 Exemplos de Uso
+
+### Dashboard Completo
+```bash
+python main.py
+```
+
+### Testar Módulos
+```bash
+python test_modules.py
+```
+
+## 💻 Tecnologias
+
+- **Python 3.8+**
+- **psutil** - Coleta de dados do sistema
+- **py-dashing** - Interface visual no terminal
+- **blessed** - Manipulação avançada de terminal
+
+## 🌐 Compatibilidade
+
+| Sistema | Status | Observações |
+|---------|--------|-------------|
+| 🪟 Windows | ✅ Completo | Ventiladores não disponíveis |
+| 🐧 Linux | ✅ Completo | Todas as features |
+| 🍎 macOS | ✅ Completo | Ventiladores limitados |
+
+## 🔮 Próximas Versões
+
+### 🎨 Interface Web (Planejado)
+- **Dash** ou **Streamlit** para interface web
+- Gráficos interativos e histórico
+- Dashboard responsivo
+- Múltiplos temas
+- Exportação de relatórios
+
+### 📊 Recursos Futuros
+- Alertas e notificações
+- Histórico de uso
+- Comparação temporal
+- Gráficos avançados
+- Monitoramento remoto
+
+## 📈 Status do Projeto
+
+**Versão Atual:** 1.0.0 - Terminal Interface  
+**Status:** ✅ 100% Completo (Desafio I)  
+**Próxima Versão:** 2.0.0 - Web Interface (Dash/Streamlit)
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👨‍� Autor
+
+**Duarte**  
+GitHub: [@danielduartt](https://github.com/danielduartt)
+
+## 🎓 Agradecimentos
+
+Projeto desenvolvido como parte do **Desafio I** da disciplina de Sistemas Operacionais.
+
 ---
 
-## 👨‍💻 Autor
+## 📌 Links Rápidos
 
--   **Daniel Nunes Duarte**
+- 📚 [Guia de Uso Detalhado](./docs/GUIA_USO.md)
+- 🔮 [Roadmap - Próximas Versões](./docs/ROADMAP.md)
 
 ---
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT.
-```
